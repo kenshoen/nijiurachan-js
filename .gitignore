@@ -1,3 +1,7 @@
+# ビルド時生成するファイル
+
+index.ts
+
 # Logs
 logs
 *.log
@@ -137,3 +141,6 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Bun
+.bun/
