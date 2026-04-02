@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "bierner.markdown-mermaid",
+        "biomejs.biome",
+        "EditorConfig.EditorConfig",
+        "oven.bun-vscode",
+        "vitest.explorer",
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "include": [],
+    "files": [],
+    "references": [
+        {
+            "path": "src/build"
+        },
+        {
+            "path": "src/components"
+        },
+        {
+            "path": "src/elements"
+        },
+        {
+            "path": "src/io"
+        },
+        {
+            "path": "src/pure"
+        },
+        {
+            "path": "src/test"
+        },
+        {
+            "path": "src/util"
+        }
+    ]
+}
