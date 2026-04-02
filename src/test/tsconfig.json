@@ -5,7 +5,10 @@
     ],
     "references": [
         {
-            "path": "../entrypoints"
+            "path": "../elements"
+        },
+        {
+            "path": "../io"
         },
         {
             "path": "../pure"

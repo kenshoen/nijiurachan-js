@@ -1,6 +1,4 @@
 import { JSDOM } from "jsdom"
-import type {} from "ts/components/types"
-import { AxnosPaintPopup } from "ts/io/axnos-paint-popup"
 import {
     afterEach,
     describe,
@@ -9,6 +7,8 @@ import {
     type Mock,
     test,
 } from "vitest"
+import type {} from "#js/components/types"
+import { AxnosPaintPopup } from "#js/io/axnos-paint-popup"
 
 describe(AxnosPaintPopup, () => {
     let openSpy: Mock<typeof window.open>

@@ -1,3 +1,5 @@
+/// <reference types="cloudflare-turnstile" />
+
 declare global {
     interface Window {
         readonly turnstile?: Turnstile.Turnstile

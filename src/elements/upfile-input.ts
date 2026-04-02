@@ -1,7 +1,8 @@
 import type { FunctionComponent } from "preact"
 import { render } from "preact"
-import type {} from "ts/components/types"
-import type { UpfileInputProps } from "ts/components/upfile-input-fragment"
+import { jsxDEV } from "preact/jsx-runtime"
+import type {} from "#js/components/types"
+import type { UpfileInputProps } from "#js/components/upfile-input-fragment"
 import type { CustomElementClass } from "./types"
 
 /**
@@ -34,12 +35,12 @@ export const makeUpfileInputElement = (
             const allowImageReplies = /\bfile\b/i.test(allowType)
 
             render(
-                <UpfileInput
-                    form={form}
-                    allowImageReplies={allowImageReplies}
-                    canvasWidth={400}
-                    canvasHeight={266}
-                />,
+                jsxDEV(UpfileInput, {
+                    form: form,
+                    allowImageReplies: allowImageReplies,
+                    canvasWidth: 400,
+                    canvasHeight: 266,
+                }),
                 this,
             )
         }

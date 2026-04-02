@@ -8,9 +8,9 @@ import {
     useRef,
     useState,
 } from "preact/hooks"
-import type { UpfileAction, UpfileControlState } from "ts/pure/upfile"
-import { getShownControls, nextMode } from "ts/pure/upfile"
-import type {} from "./types"
+import type { UpfileAction, UpfileControlState } from "#js/pure/upfile"
+import { getShownControls, nextMode } from "#js/pure/upfile"
+import type { IAxnosPaintPopup } from "./types"
 
 /** 添付File欄の動作に必要な設定 */
 export type UpfileInputProps = {
@@ -22,27 +22,6 @@ export type UpfileInputProps = {
     canvasWidth: number
     /** はっちゃんキャンバス高さ */
     canvasHeight: number
-}
-
-/** アクノスペイントのオプション */
-export type AxnosPaintPopupOptions = {
-    /** キャンバス幅 */
-    canvasWidth: number
-    /** キャンバス高さ */
-    canvasHeight: number
-}
-
-/** アクノスペイントを開く用の部品 */
-export interface IAxnosPaintPopup {
-    /**
-     * ポップアップして結果を待ち受ける
-     * @returns お絵描き画像
-     * @throws クリアボタンでキャンセルされた場合やポップアップが失敗した場合
-     */
-    popup(options: AxnosPaintPopupOptions): Promise<Blob>
-
-    /** 待ち受けをやめる */
-    abort(): void
 }
 
 /**

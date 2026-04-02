@@ -6,7 +6,7 @@
     "packageManager": "bun@1.3.11",
     "private": true,
     "imports": {
-        "#/*": [
+        "#js/*": [
             "./src/*.ts",
             "./src/*.tsx"
         ]
@@ -34,6 +34,7 @@
         }
     },
     "scripts": {
+        "postinstall": "bun run src/build/postinstall.ts",
         "clean": "git clean -fdx .bun node_modules src dist",
         "dev": "bun run src/build/dev.ts",
         "watch": "bun run src/build/watch.ts",

@@ -1,11 +1,11 @@
+import { describe, expect, test } from "vitest"
 import {
     getShownControls,
     nextMode,
     type UpfileAction,
     type UpfileControlState,
     type UpfileMode,
-} from "ts/pure/upfile"
-import { describe, expect, test } from "vitest"
+} from "#js/pure/upfile"
 
 describe("Upfileの判定", () => {
     const modes: UpfileMode[] = [

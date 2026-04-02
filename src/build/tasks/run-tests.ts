@@ -21,7 +21,7 @@ export async function runTests(): Promise<number> {
 /** テストを実行 */
 function spawnTest(): {
     promise: Promise<number>
-    kill: () => void
+    kill(): void
 } {
     const p = spawn("bun", ["vitest", "--run", "--reporter=github-actions"], {
         stdio: "ignore",
@@ -32,5 +32,8 @@ function spawnTest(): {
         p.on("error", reject)
     })
 
-    return { promise, kill: () => p.kill() }
+    return {
+        promise,
+        kill: () => p.kill(),
+    }
 }

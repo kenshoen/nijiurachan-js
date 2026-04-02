@@ -9,11 +9,6 @@
             "ES2024",
             "ESNext.Collection"
         ],
-        "paths": {
-            "#/*": [
-                "./src/*"
-            ]
-        },
         "types": [],
         "composite": true,
         "rootDir": ".",

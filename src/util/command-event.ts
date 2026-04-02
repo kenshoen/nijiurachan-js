@@ -6,22 +6,6 @@
  * @file
  */
 
-declare global {
-    var CommandEvent: {
-        new (type: string, options?: CommandEventInit): CommandEvent
-    }
-}
-
-export interface CommandEvent extends Event {
-    command: string
-    source: HTMLElement | null
-}
-
-export interface CommandEventInit extends EventInit {
-    command: string
-    source: HTMLElement
-}
-
 /** CommandEventが無ければポリフィルを適用する */
 export function initCommandEvent(): void {
     if (window.CommandEvent) {
@@ -30,7 +14,7 @@ export function initCommandEvent(): void {
 
     window.CommandEvent = class CommandEvent extends Event {
         command: string
-        source: HTMLElement | null
+        source: Element | null
 
         constructor(type: string, options?: CommandEventInit) {
             super(type, options)

@@ -14,7 +14,7 @@ export type BuildOnceOptions = {
 }
 
 /**
- * 指定されたTypeScriptをそれぞれバンドルする。
+ * TypeScriptをそれぞれバンドルする。
  * ts/entrypoints/pc.ts → public/assets/js/ts/pc.js
  * ts/entrypoints/sp.ts → public/assets/js/ts/sp.js
  */
@@ -25,27 +25,32 @@ export async function buildEntrypoints({
 }: BuildOnceOptions): Promise<{ success: boolean }> {
     try {
         const entrypoints = await Array.fromAsync(
-            glob(join(dir, "entrypoints/*.{ts,html}"), {
+            glob([join(dir, "{elements,components,io,pure,util}/*.{ts,tsx}")], {
                 exclude: ["**/index.ts"],
             }),
         )
+        const prod = buildFor === "production"
         await build({
             entrypoints,
-            outdir: "public/assets/js/ts",
+            root: dir,
+            outdir: "dist",
             target: "browser",
             minify: buildFor === "production",
             sourcemap: "linked",
             splitting: buildFor === "production",
+            external: ["axnospaint-for-aimg", "preact"],
             define: {
-                "import.meta.PROD": `${buildFor === "production"}`,
-                "import.meta.DEV": `${buildFor !== "production"}`,
+                "import.meta.PROD": `${prod}`,
+                "import.meta.DEV": `${!prod}`,
             },
             plugins: [
                 generateIndexTsUnplugin.bun({
                     dir,
-                    excludePatterns: ["**/build"],
+                    excludePatterns: ["**/build", "**/test"],
                 }),
-                tscUnplugin.bun({ dir: join(dir, "entrypoints") }),
+                tscUnplugin.bun({
+                    dir: join(dir, ".."),
+                }),
             ],
         } satisfies Bun.BuildConfig)
 

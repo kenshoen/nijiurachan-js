@@ -1,9 +1,9 @@
-import type {} from "ts/components/types"
 import type {
     AxnosPaintPopupOptions,
     IAxnosPaintPopup,
-} from "ts/components/upfile-input-fragment"
+} from "#js/components/types"
 import popupHtml from "./axnos-paint-popup.html" with { type: "text" }
+import "./globals.d"
 
 /** @inheritdoc */
 export class AxnosPaintPopup implements IAxnosPaintPopup {

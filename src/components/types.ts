@@ -47,4 +47,24 @@ declare global {
         }>
     }
 }
-export {}
+
+/** アクノスペイントのオプション */
+export type AxnosPaintPopupOptions = {
+    /** キャンバス幅 */
+    canvasWidth: number
+    /** キャンバス高さ */
+    canvasHeight: number
+}
+
+/** アクノスペイントを開く用の部品 */
+export interface IAxnosPaintPopup {
+    /**
+     * ポップアップして結果を待ち受ける
+     * @returns お絵描き画像
+     * @throws クリアボタンでキャンセルされた場合やポップアップが失敗した場合
+     */
+    popup(options: AxnosPaintPopupOptions): Promise<Blob>
+
+    /** 待ち受けをやめる */
+    abort(): void
+}
