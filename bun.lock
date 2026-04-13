@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "nijiurachan-js",
+      "dependencies": {
+        "cookie-store": "4.0.0-next.4",
+      },
       "devDependencies": {
         "@biomejs/biome": "2.3.1",
         "@types/bun": "^1.3.7",
@@ -210,6 +213,8 @@
     "concat-map": ["concat-map@0.0.1", "", {}, "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg=="],
 
     "convert-source-map": ["convert-source-map@2.0.0", "", {}, "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg=="],
+
+    "cookie-store": ["cookie-store@4.0.0-next.4", "", {}, "sha512-RVcIK13cCiAa+rsxAbFhrIThn1eBcgt9WTyLq539zMafDnhdGb6u/O5JdMTC3/pcJVqqHJmctiWxAYPpwT/fxw=="],
 
     "copy-anything": ["copy-anything@3.0.5", "", { "dependencies": { "is-what": "^4.1.8" } }, "sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w=="],
 
