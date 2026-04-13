@@ -83,5 +83,8 @@
         "typescript-plugin-css-modules": "^5.2.0",
         "unplugin": "^3.0.0",
         "vitest": "^4.0.18"
+    },
+    "dependencies": {
+        "cookie-store": "4.0.0-next.4"
     }
 }
