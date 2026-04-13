@@ -38,7 +38,12 @@ export async function buildEntrypoints({
             minify: buildFor === "production",
             sourcemap: "linked",
             splitting: buildFor === "production",
-            external: ["axnospaint-for-aimg", "preact"],
+            external: [
+                // アプリ側で用意するライブラリ
+                "axnospaint-for-aimg",
+                "preact",
+                "zustand",
+            ],
             define: {
                 "import.meta.PROD": `${prod}`,
                 "import.meta.DEV": `${!prod}`,

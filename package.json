@@ -12,25 +12,45 @@
         ]
     },
     "exports": {
-        "./elements/*": {
-            "types": "./src/elements/*.ts",
-            "default": "./src/elements/*.ts"
+        "./components": {
+            "types": "./src/components/index.ts",
+            "default": "./src/components/index.ts"
         },
         "./components/*": {
             "types": "./src/components/*.tsx",
             "default": "./src/components/*.tsx"
         },
-        "./util/*": {
-            "types": "./src/util/*.ts",
-            "default": "./src/util/*.ts"
+        "./elements": {
+            "types": "./src/elements/index.ts",
+            "default": "./src/elements/index.ts"
+        },
+        "./elements/*": {
+            "types": "./src/elements/*.ts",
+            "default": "./src/elements/*.ts"
+        },
+        "./io": {
+            "types": "./src/io/index.ts",
+            "default": "./src/io/index.ts"
         },
         "./io/*": {
             "types": "./src/io/*.ts",
             "default": "./src/io/*.ts"
         },
+        "./pure": {
+            "types": "./src/pure/index.ts",
+            "default": "./src/pure/index.ts"
+        },
         "./pure/*": {
             "types": "./src/pure/*.ts",
             "default": "./src/pure/*.ts"
+        },
+        "./util": {
+            "types": "./src/util/index.ts",
+            "default": "./src/util/index.ts"
+        },
+        "./util/*": {
+            "types": "./src/util/*.ts",
+            "default": "./src/util/*.ts"
         }
     },
     "scripts": {
@@ -47,9 +67,10 @@
         "check": "biome check && bun run tsc"
     },
     "peerDependencies": {
-        "lodash-es": "4.17.23",
+        "axnospaint-for-aimg": "github:nijiurachan/axnospaint-for-aimg#1f7a92ac63a8034987392ec615f736581bba1cbc",
+        "lodash-es": "4.18.1",
         "preact": "^10.28.3",
-        "axnospaint-for-aimg": "github:nijiurachan/axnospaint-for-aimg#1f7a92ac63a8034987392ec615f736581bba1cbc"
+        "zustand": "^5.0.12"
     },
     "devDependencies": {
         "@biomejs/biome": "2.3.1",
