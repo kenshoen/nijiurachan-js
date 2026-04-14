@@ -9,23 +9,14 @@
 
 Phase 1 では新スマホ版の共通部品供給元、Phase 3 では PC 版 V2 の共通基盤、Phase 4 では PC / SP 統合版 V3 の再利用資産として位置づける。
 
-## 2. 最初に読む順番
+## 2. 依存構造
 
-1. `README.md`
-2. `src/README.md`
-3. `docs/DOCUMENT_HUB.md`
-4. `docs/requirements/SHARED_UI_FOUNDATION_REQUIREMENTS.md`
-5. `docs/specs/ARCHITECTURE_PHASE1_TO_PHASE4.md`
-6. `docs/specs/FOUNDATION_BOUNDARY_MATRIX.md`
-7. `docs/operations/IMPLEMENTATION_BOTTLENECK_REVIEW.md`
-8. `docs/implementation/TEST_DESIGN.md`
-9. `docs/operations/RUNBOOK.md`
-
-## 3. 依存構造
+このライブラリはフォルダでモジュール分けしている。
+責務をあいまいにしないため、下の関係のまま循環させずに保つこと。
 
 ```mermaid
 flowchart LR
-    Entry["entrypoints (app側)"] --> Elements["elements"]
+    Entry["アプリ<br>(ライブラリ外)"] --> Elements["elements"]
     Entry --> IO["io"]
     Elements --> Components["components"]
     IO --> Components
@@ -35,7 +26,7 @@ flowchart LR
     Tests --> Pure
 ```
 
-## 4. 主なディレクトリと責務
+## 3. 主なディレクトリと責務
 
 | 領域 | 主ディレクトリ | 役割 |
 | --- | --- | --- |
@@ -47,7 +38,7 @@ flowchart LR
 | util | `src/util/*` | 汎用イベント・補助ユーティリティ |
 | test | `src/test/*` | 設計思想に沿ったユニットテスト |
 
-## 5. ホットスポット
+## 4. ホットスポット
 
 - `src/README.md`
   - 現状の依存方向と設計思想の中心
@@ -60,13 +51,12 @@ flowchart LR
 - `src/test/upfile/*.test.ts`
   - 現在のテスト思想が最も見える領域
 
-## 6. 文書の責務分担
+## 5. 文書の責務分担
 
 | 文書 | 役割 |
 | --- | --- |
-| `docs/README.md` | docs 入口 |
-| `docs/BIRDSEYE.md` | 俯瞰、読み順、ホットスポット |
-| `docs/DOCUMENT_HUB.md` | 正本導線 |
+| `docs/README.md` | docs 入口、読み順 |
+| `docs/BIRDSEYE.md` | 俯瞰、ホットスポット |
 | `docs/requirements/SHARED_UI_FOUNDATION_REQUIREMENTS.md` | 共通基盤の要件 |
 | `docs/specs/ARCHITECTURE_PHASE1_TO_PHASE4.md` | Phase 1 / 3 / 4 を受ける設計方針 |
 | `docs/specs/FOUNDATION_BOUNDARY_MATRIX.md` | 共通基盤に残す責務と外へ出す責務の整理 |
@@ -74,7 +64,7 @@ flowchart LR
 | `docs/implementation/TEST_DESIGN.md` | 確認観点 |
 | `docs/operations/RUNBOOK.md` | 更新時、公開時、利用時の運用判断 |
 
-## 7. 次に固めるべきもの
+## 6. 次に固めるべきもの
 
 1. `AI_BBS/ts` と `aimg_viewer` のどこまでを共通基盤へ寄せるか
 2. Preact / Custom Elements と React クライアントの境界

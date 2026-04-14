@@ -7,7 +7,6 @@
 
 - docs入口: `docs/README.md`
 - Birdseye: `docs/BIRDSEYE.md`
-- ドキュメントハブ: `docs/DOCUMENT_HUB.md`
 - 共通基盤要件: `docs/requirements/SHARED_UI_FOUNDATION_REQUIREMENTS.md`
 - Phase 1-4 アーキテクチャ方針: `docs/specs/ARCHITECTURE_PHASE1_TO_PHASE4.md`
 - Runbook: `docs/operations/RUNBOOK.md`

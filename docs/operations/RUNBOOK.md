@@ -4,13 +4,7 @@
 
 ## 1. 参照順
 
-1. `docs/BIRDSEYE.md`
-2. `docs/requirements/SHARED_UI_FOUNDATION_REQUIREMENTS.md`
-3. `docs/specs/ARCHITECTURE_PHASE1_TO_PHASE4.md`
-4. `docs/specs/FOUNDATION_BOUNDARY_MATRIX.md`
-5. `docs/operations/IMPLEMENTATION_BOTTLENECK_REVIEW.md`
-6. `docs/implementation/TEST_DESIGN.md`
-7. `src/README.md`
+- [`docs/README.md`](../README.md)を参照
 
 ## 2. 運用上の要点
 
